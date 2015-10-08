@@ -101,7 +101,12 @@ static bool isPoint;
             [self.logicCalculatorDelegate calculatorLogicDidChangeValue:firstNumber];
             break;
         case OperationTypeShare:
-            firstNumber = [NSString stringWithFormat:@"%g", firstNumber.doubleValue / secondNumber.doubleValue];
+            if ([secondNumber isEqualToString:@"0"]) {
+                firstNumber = @"∞";
+            } else {
+                firstNumber = [NSString stringWithFormat:@"%g", firstNumber.doubleValue / secondNumber.doubleValue];
+            }
+            
             [self.logicCalculatorDelegate calculatorLogicDidChangeValue:firstNumber];
             break;
     }
