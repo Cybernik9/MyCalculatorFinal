@@ -41,12 +41,28 @@
  }
  */
 
+- (void) willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration {
+    NSLog(@"!!!!!!!willRotateToInterfaceOrientation!!!!!!!!!!!!!");
+    
+    [self changeTextSizeButtons:1];
+}
 
+- (void) changeTextSizeButtons:(BOOL) viewOrientation {
+    
+    if (viewOrientation) {
+        NSLog(@"%f", self.view.frame.size.height);
+        NSLog(@"%f", self.view.frame.size.width);
+    }
+    
+    
+    [self.button.titleLabel setFont:[UIFont systemFontOfSize:80]];
+    //self.button.titleLabel.font = [UIFont systemFontOfSize:160];
+}
 
 #pragma mark - Action
 
 - (IBAction)actionPushNumber:(id)sender {
-    [self.logicCalculator inputDigit:[NSString stringWithFormat:@"%ld", (long)[sender tag]]];
+    [self.logicCalculator inputNumber:[NSString stringWithFormat:@"%ld", (long)[sender tag]]];
 }
 
 - (IBAction)actionPushSimpleOperation:(id)sender {
@@ -78,7 +94,7 @@
 }
 
 - (IBAction)actionPuchPI:(id)sender {
-    [self.logicCalculator PiNumber];
+    [self.logicCalculator piNumber];
 }
 
 - (IBAction)actionPushE:(id)sender {

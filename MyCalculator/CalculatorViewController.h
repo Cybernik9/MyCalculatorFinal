@@ -13,6 +13,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *mainScreenLable;
 @property (weak, nonatomic) IBOutlet UIButton *clearButton;
 
+@property (unsafe_unretained, nonatomic) IBOutlet UIButton *button;
 
 - (IBAction)actionPushNumber:(id)sender;
 - (IBAction)actionPushSimpleOperation:(id)sender;

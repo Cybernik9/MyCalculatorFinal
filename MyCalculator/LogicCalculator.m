@@ -35,10 +35,11 @@ static NSString* operationsSymbol;
 
 static bool isClearAll = YES;
 static bool isPoint;
+static bool isCount;
 
 #pragma mark - Simple Operation
 
-- (void) inputDigit:(NSString*) number {
+- (void) inputNumber:(NSString*) number {
     
     if ([firstNumber isEqualToString:@"-0"]) {
         firstNumber = [firstNumber substringToIndex:firstNumber.length-1];
@@ -50,17 +51,21 @@ static bool isPoint;
         firstNumber = [NSString stringWithFormat:@"%@%@",firstNumber,number];
         [self.logicCalculatorDelegate calculatorLogicDidChangeValue:firstNumber];
     } else {
-        secondNumber = [NSString stringWithFormat:@"%@%@",secondNumber,number];
+        if (isCount) {
+            secondNumber = [NSString stringWithFormat:@"%@",number];
+        } else {
+            secondNumber = [NSString stringWithFormat:@"%@%@",secondNumber,number];
+        }
         [self.logicCalculatorDelegate calculatorLogicDidChangeValue:secondNumber];
     }
     
-    isClearAll = NO;
+    isClearAll = isCount = NO;
     [self.logicCalculatorDelegate clearButtonDidChange:@"C"];
 }
 
 - (void) simpleOperation:(NSInteger) operation {
     
-    if (operations && ![firstNumber isEqualToString:@""] && ![secondNumber isEqualToString:@""]) {
+    if (operations && ![secondNumber isEqualToString:@""] && !isCount) {
         [self countTwoNumbers];
         secondNumber = @"";
     }
@@ -89,28 +94,29 @@ static bool isPoint;
     
     switch (operations) {
         case OperationTypePlus:
-            firstNumber = [NSString stringWithFormat:@"%g", firstNumber.doubleValue + secondNumber.doubleValue];
+            firstNumber = [NSString stringWithFormat:@"%.20g", firstNumber.doubleValue + secondNumber.doubleValue];
             [self.logicCalculatorDelegate calculatorLogicDidChangeValue:firstNumber];
             break;
         case OperationTypeMinus:
-            firstNumber = [NSString stringWithFormat:@"%g", firstNumber.doubleValue - secondNumber.doubleValue];
+            firstNumber = [NSString stringWithFormat:@"%.20g", firstNumber.doubleValue - secondNumber.doubleValue];
             [self.logicCalculatorDelegate calculatorLogicDidChangeValue:firstNumber];
             break;
         case OperationTypeMultiply:
-            firstNumber = [NSString stringWithFormat:@"%g", firstNumber.doubleValue * secondNumber.doubleValue];
+            firstNumber = [NSString stringWithFormat:@"%.20g", firstNumber.doubleValue * secondNumber.doubleValue];
             [self.logicCalculatorDelegate calculatorLogicDidChangeValue:firstNumber];
             break;
         case OperationTypeShare:
             if ([secondNumber isEqualToString:@"0"]) {
                 firstNumber = @"∞";
             } else {
-                firstNumber = [NSString stringWithFormat:@"%g", firstNumber.doubleValue / secondNumber.doubleValue];
+                firstNumber = [NSString stringWithFormat:@"%.20g", firstNumber.doubleValue / secondNumber.doubleValue];
             }
             
             [self.logicCalculatorDelegate calculatorLogicDidChangeValue:firstNumber];
             break;
     }
     
+    isCount = YES;
     [self.logicCalculatorDelegate clearButtonDidChange:@"AC"];
     [self.logicCalculatorDelegate calculatorLogicDidChangeValue:firstNumber];
 }
@@ -152,8 +158,9 @@ static bool isPoint;
 
 - (void) clearAll {
     
-    if ([secondNumber isEqualToString:@""]) {
+    if (!operations || isCount) {
         firstNumber = @"";
+        secondNumber = @"";
         operations = 0;
         [self.logicCalculatorDelegate calculatorLogicDidChangeValue:@"0"];
     } else {
@@ -166,7 +173,7 @@ static bool isPoint;
 
 #pragma mark - Additional operation
 
-- (void) PiNumber {
+- (void) piNumber {
     
     [self printAdditionalNumber:M_PI];
 }
@@ -188,28 +195,28 @@ static bool isPoint;
     
     switch (operation) {
         case OperationTypeRootTwo:
-            string = [NSString stringWithFormat:@"%g",pow(string.doubleValue, 0.5)];
+            string = [NSString stringWithFormat:@"%.20g",pow(string.doubleValue, 0.5)];
             break;
         case OperationTypeRootThee:
-            string = [NSString stringWithFormat:@"%g",pow(string.doubleValue, 1./3)];
+            string = [NSString stringWithFormat:@"%.20g",pow(string.doubleValue, 1./3)];
             break;
         case OperationTypeNumberToPowerTwo:
-            string = [NSString stringWithFormat:@"%g",pow(string.doubleValue, 2)];
+            string = [NSString stringWithFormat:@"%.20g",pow(string.doubleValue, 2)];
             break;
         case OperationTypeNumberToPowerThree:
-            string = [NSString stringWithFormat:@"%g",pow(string.doubleValue, 1.3)];
+            string = [NSString stringWithFormat:@"%.20g",pow(string.doubleValue, 1.3)];
             break;
         case OperationTypeTenToPowerNumber:
-            string = [NSString stringWithFormat:@"%g",pow(10, string.doubleValue)];
+            string = [NSString stringWithFormat:@"%.20g",pow(10, string.doubleValue)];
             break;
         case OperationTypeNumberFactorial:
-            string = [NSString stringWithFormat:@"%10.10g", [self factorial:string.doubleValue]];
+            string = [NSString stringWithFormat:@"%.20g", [self factorial:string.doubleValue]];
             break;
         case OperationTypeOneShareToNumber:
-            string = [NSString stringWithFormat:@"%g",1 / string.doubleValue];
+            string = [NSString stringWithFormat:@"%.20g",1 / string.doubleValue];
             break;
         case OperationTypeEToPowerNumber:
-            string = [NSString stringWithFormat:@"%g",pow(M_E, string.doubleValue)];
+            string = [NSString stringWithFormat:@"%.20g",pow(M_E, string.doubleValue)];
             break;
     }
     
@@ -227,10 +234,10 @@ static bool isPoint;
 - (void) printSimpleNumber:(double) operationNumber {
     
     if (operations) {
-        secondNumber = [NSString stringWithFormat:@"%g",secondNumber.doubleValue * operationNumber];
+        secondNumber = [NSString stringWithFormat:@"%.20g",secondNumber.doubleValue * operationNumber];
         [self.logicCalculatorDelegate calculatorLogicDidChangeValue:secondNumber];
     } else {
-        firstNumber = [NSString stringWithFormat:@"%g",firstNumber.doubleValue * operationNumber];
+        firstNumber = [NSString stringWithFormat:@"%.20g",firstNumber.doubleValue * operationNumber];
         [self.logicCalculatorDelegate calculatorLogicDidChangeValue:firstNumber];
     }
 }
@@ -238,10 +245,10 @@ static bool isPoint;
 - (void) printAdditionalNumber:(double) number {
 
     if (operations) {
-        secondNumber = [NSString stringWithFormat:@"%g",number];
+        secondNumber = [NSString stringWithFormat:@"%.20g",number];
         [self.logicCalculatorDelegate calculatorLogicDidChangeValue:secondNumber];
     } else {
-        firstNumber = [NSString stringWithFormat:@"%g",number];
+        firstNumber = [NSString stringWithFormat:@"%.20g",number];
         [self.logicCalculatorDelegate calculatorLogicDidChangeValue:firstNumber];
     }
 }

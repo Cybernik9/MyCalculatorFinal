@@ -17,7 +17,9 @@
 
 @interface LogicCalculator : NSObject
 
-- (void) inputDigit:(NSString*) number;
+#pragma mark - Simple Operation
+
+- (void) inputNumber:(NSString*) number;
 - (void) simpleOperation:(NSInteger) operation;
 - (void) countTwoNumbers;
 - (void) plusMinusNumber;
@@ -25,7 +27,9 @@
 - (void) percentageNumber;
 - (void) clearAll;
 
-- (void) PiNumber;
+#pragma mark - Additional Operation
+
+- (void) piNumber;
 - (void) eNumber;
 - (void) additionalOperation:(NSInteger) operation;
 
