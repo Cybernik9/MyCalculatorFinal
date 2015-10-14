@@ -31,34 +31,6 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
- #pragma mark - Navigation
- 
- // In a storyboard-based application, you will often want to do a little preparation before navigation
- - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
- // Get the new view controller using [segue destinationViewController].
- // Pass the selected object to the new view controller.
- }
- */
-
-- (void) willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration {
-    NSLog(@"!!!!!!!willRotateToInterfaceOrientation!!!!!!!!!!!!!");
-    
-    [self changeTextSizeButtons:1];
-}
-
-- (void) changeTextSizeButtons:(BOOL) viewOrientation {
-    
-    if (viewOrientation) {
-        NSLog(@"%f", self.view.frame.size.height);
-        NSLog(@"%f", self.view.frame.size.width);
-    }
-    
-    
-    [self.button.titleLabel setFont:[UIFont systemFontOfSize:80]];
-    //self.button.titleLabel.font = [UIFont systemFontOfSize:160];
-}
-
 #pragma mark - Action
 
 - (IBAction)actionPushNumber:(id)sender {
@@ -106,15 +78,15 @@
 
 #pragma mark - LogicCalculatorProtocol
 
-- (void) calculatorLogicDidChangeValue:(NSString*) value {
+- (void) calculatorLogicDidChangeValue:(NSString*)value {
     self.mainScreenLable.text = value;
 }
 
-- (void) clearButtonDidChange:(NSString*) value {
-    self.clearButton.highlighted = YES;
-    [self.clearButton setTitle:value forState:UIControlStateHighlighted];
-    //[self.clearButton setTitle:@"KKK" forState:UIControlStateHighlighted]
-    
+- (void) clearButtonDidChange:(NSString*)value {
+
+    [self.clearButtonVertical setTitle:value forState:UIControlStateNormal];
+    [self.clearButtonHorizontal setTitle:value forState:UIControlStateNormal];
+
 }
 
 @end

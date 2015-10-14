@@ -10,17 +10,19 @@
 
 @protocol LogicCalculatorProtocol <NSObject>
 
-- (void)calculatorLogicDidChangeValue:(NSString *)value;
-- (void) clearButtonDidChange:(NSString*) value;
+- (void) calculatorLogicDidChangeValue:(NSString *)value;
+- (void) clearButtonDidChange:(NSString*)value;
 
 @end
 
 @interface LogicCalculator : NSObject
 
+@property (nonatomic, weak) NSObject <LogicCalculatorProtocol> *logicCalculatorDelegate;
+
 #pragma mark - Simple Operation
 
-- (void) inputNumber:(NSString*) number;
-- (void) simpleOperation:(NSInteger) operation;
+- (void) inputNumber:(NSString*)number;
+- (void) simpleOperation:(NSInteger)operation;
 - (void) countTwoNumbers;
 - (void) plusMinusNumber;
 - (void) makePoint;
@@ -31,8 +33,6 @@
 
 - (void) piNumber;
 - (void) eNumber;
-- (void) additionalOperation:(NSInteger) operation;
-
-@property (nonatomic, weak) NSObject <LogicCalculatorProtocol> *logicCalculatorDelegate;
+- (void) additionalOperation:(NSInteger)operation;
 
 @end

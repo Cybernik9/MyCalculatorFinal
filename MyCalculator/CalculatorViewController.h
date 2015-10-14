@@ -11,7 +11,9 @@
 @interface CalculatorViewController : UIViewController
 
 @property (weak, nonatomic) IBOutlet UILabel *mainScreenLable;
-@property (weak, nonatomic) IBOutlet UIButton *clearButton;
+@property (weak, nonatomic) IBOutlet UIButton *clearButtonVertical;
+@property (weak, nonatomic) IBOutlet UIButton *clearButtonHorizontal;
+
 
 @property (unsafe_unretained, nonatomic) IBOutlet UIButton *button;
 
