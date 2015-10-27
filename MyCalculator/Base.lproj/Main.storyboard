@@ -9,6 +9,7 @@
         <!--Calculator View Controller-->
         <scene sceneID="Hkz-js-R7X">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oDV-LZ-HQ9" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="t4B-ES-xaG" customClass="CalculatorViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="hka-Lq-A6h"/>
@@ -944,7 +945,6 @@
                         <outlet property="mainScreenLable" destination="Gpw-Wa-Q7h" id="cHT-J2-Vwr"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="oDV-LZ-HQ9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3562.5" y="390"/>
         </scene>

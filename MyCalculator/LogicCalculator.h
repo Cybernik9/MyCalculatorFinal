@@ -19,6 +19,10 @@
 
 @property (nonatomic, weak) NSObject <LogicCalculatorProtocol> *logicCalculatorDelegate;
 
+@property (strong, nonatomic) NSString* firstNumber;
+@property (strong, nonatomic) NSString* secondNumber;
+@property (assign, nonatomic) NSInteger operations;
+
 #pragma mark - Simple Operation
 
 - (void) inputNumber:(NSString*)number;

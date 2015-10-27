@@ -14,8 +14,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *clearButtonVertical;
 @property (weak, nonatomic) IBOutlet UIButton *clearButtonHorizontal;
 
-
-@property (unsafe_unretained, nonatomic) IBOutlet UIButton *button;
+#pragma mark - Action simple operation
 
 - (IBAction)actionPushNumber:(id)sender;
 - (IBAction)actionPushSimpleOperation:(id)sender;
@@ -24,6 +23,8 @@
 - (IBAction)actionPushPlusMinus:(id)sender;
 - (IBAction)actionPushPoint:(id)sender;
 - (IBAction)actionPushAC:(id)sender;
+
+#pragma mark - Action additional operation
 
 - (IBAction)actionPushAdditionalOperation:(id)sender;
 - (IBAction)actionPuchPI:(id)sender;
