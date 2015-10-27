@@ -39,7 +39,7 @@
 - (void) eNumber;
 - (void) additionalOperation:(NSInteger)operation;
 
-#pragma mark - Print number
+#pragma mark - Print
 
 - (void)printChangeOrientation:(BOOL)isPortrait;
 

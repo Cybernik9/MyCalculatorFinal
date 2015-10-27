@@ -9,7 +9,6 @@
         <!--Calculator View Controller-->
         <scene sceneID="Hkz-js-R7X">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="oDV-LZ-HQ9" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="t4B-ES-xaG" customClass="CalculatorViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="hka-Lq-A6h"/>
@@ -945,6 +944,7 @@
                         <outlet property="mainScreenLable" destination="Gpw-Wa-Q7h" id="cHT-J2-Vwr"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oDV-LZ-HQ9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3562.5" y="390"/>
         </scene>
@@ -960,7 +960,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="60" translatesAutoresizingMaskIntoConstraints="NO" id="Kdt-TB-bOu" userLabel="Screen">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="40" translatesAutoresizingMaskIntoConstraints="NO" id="Kdt-TB-bOu" userLabel="Screen">
                                 <rect key="frame" x="16" y="20" width="568" height="122"/>
                                 <fontDescription key="fontDescription" type="system" weight="thin" pointSize="120"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -1580,7 +1580,7 @@
                                 <subviews>
                                     <button opaque="NO" tag="21" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OSK-bi-Kvz">
                                         <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                        <color key="backgroundColor" white="0.94999999999999996" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="backgroundColor" red="0.90196078431372551" green="0.90196078431372551" blue="0.90196078431372551" alpha="1" colorSpace="calibratedRGB"/>
                                         <state key="normal" title="√">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -1595,26 +1595,24 @@
                                             <action selector="actionPushAdditionalOperation:" destination="zd5-s6-Glw" eventType="touchUpInside" id="mxk-9e-nD5"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" tag="28" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="34x-SX-C4o">
+                                    <button opaque="NO" tag="28" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="34x-SX-C4o">
                                         <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                        <color key="backgroundColor" white="0.95000000000000007" alpha="1" colorSpace="calibratedWhite"/>
-                                        <state key="normal" title="eX">
+                                        <color key="backgroundColor" white="0.90000000000000002" alpha="1" colorSpace="calibratedWhite"/>
+                                        <state key="normal" image="eX">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <variation key="heightClass=compact">
                                             <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                         </variation>
-                                        <variation key="heightClass=regular-widthClass=regular">
-                                            <fontDescription key="fontDescription" type="system" pointSize="50"/>
-                                        </variation>
+                                        <variation key="heightClass=regular-widthClass=regular"/>
                                         <connections>
                                             <action selector="actionPushAdditionalOperation:" destination="zd5-s6-Glw" eventType="touchUpInside" id="Euw-hY-stZ"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="22" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RxQ-8n-g3j">
                                         <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                        <color key="backgroundColor" white="0.94999999999999996" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="backgroundColor" red="0.90196078431372551" green="0.90196078431372551" blue="0.90196078431372551" alpha="1" colorSpace="calibratedRGB"/>
                                         <state key="normal" title="∛">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -1629,26 +1627,24 @@
                                             <action selector="actionPushAdditionalOperation:" destination="zd5-s6-Glw" eventType="touchUpInside" id="6TG-ik-ela"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" tag="25" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bKG-j9-9gv">
+                                    <button opaque="NO" tag="25" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bKG-j9-9gv">
                                         <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                        <color key="backgroundColor" white="0.95000000000000007" alpha="1" colorSpace="calibratedWhite"/>
-                                        <state key="normal" title="10x">
+                                        <color key="backgroundColor" white="0.90000000000000002" alpha="1" colorSpace="calibratedWhite"/>
+                                        <state key="normal" image="10kh">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <variation key="heightClass=compact">
                                             <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                         </variation>
-                                        <variation key="heightClass=regular-widthClass=regular">
-                                            <fontDescription key="fontDescription" type="system" pointSize="50"/>
-                                        </variation>
+                                        <variation key="heightClass=regular-widthClass=regular"/>
                                         <connections>
                                             <action selector="actionPushAdditionalOperation:" destination="zd5-s6-Glw" eventType="touchUpInside" id="oeo-aM-jgy"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jMH-mf-rEa">
                                         <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                        <color key="backgroundColor" white="0.95000000000000007" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="backgroundColor" red="0.90196078431372551" green="0.90196078431372551" blue="0.90196078431372551" alpha="1" colorSpace="calibratedRGB"/>
                                         <state key="normal" title="п">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -1665,7 +1661,7 @@
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ixz-Va-iKh">
                                         <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                        <color key="backgroundColor" white="0.95000000000000007" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="backgroundColor" red="0.90196078431372551" green="0.90196078431372551" blue="0.90196078431372551" alpha="1" colorSpace="calibratedRGB"/>
                                         <state key="normal" title="e">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -1680,19 +1676,17 @@
                                             <action selector="actionPushE:" destination="zd5-s6-Glw" eventType="touchUpInside" id="SuK-im-PWb"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" tag="27" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A17-rS-mmq">
+                                    <button opaque="NO" tag="27" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A17-rS-mmq">
                                         <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                        <color key="backgroundColor" white="0.95000000000000007" alpha="1" colorSpace="calibratedWhite"/>
-                                        <state key="normal" title="1/x">
+                                        <color key="backgroundColor" white="0.90000000000000002" alpha="1" colorSpace="calibratedWhite"/>
+                                        <state key="normal" image="1_x">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <variation key="heightClass=compact">
                                             <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                         </variation>
-                                        <variation key="heightClass=regular-widthClass=regular">
-                                            <fontDescription key="fontDescription" type="system" pointSize="50"/>
-                                        </variation>
+                                        <variation key="heightClass=regular-widthClass=regular"/>
                                         <connections>
                                             <action selector="actionPushAdditionalOperation:" destination="zd5-s6-Glw" eventType="touchUpInside" id="LtE-r1-Smb"/>
                                         </connections>
@@ -1714,43 +1708,24 @@
                                             <action selector="actionPushAC:" destination="zd5-s6-Glw" eventType="touchUpInside" id="UqQ-qA-jYH"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" tag="23" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b4x-q6-oum">
+                                    <button opaque="NO" tag="24" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yH0-5V-GlT">
                                         <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                        <color key="backgroundColor" white="0.95000000000000007" alpha="1" colorSpace="calibratedWhite"/>
-                                        <state key="normal" title="x2">
+                                        <color key="backgroundColor" white="0.90000000000000002" alpha="1" colorSpace="calibratedWhite"/>
+                                        <state key="normal" image="kh3">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <variation key="heightClass=compact">
                                             <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                         </variation>
-                                        <variation key="heightClass=regular-widthClass=regular">
-                                            <fontDescription key="fontDescription" type="system" pointSize="50"/>
-                                        </variation>
-                                        <connections>
-                                            <action selector="actionPushAdditionalOperation:" destination="zd5-s6-Glw" eventType="touchUpInside" id="yYU-Te-bEL"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" tag="24" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yH0-5V-GlT">
-                                        <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                        <color key="backgroundColor" white="0.95000000000000007" alpha="1" colorSpace="calibratedWhite"/>
-                                        <state key="normal" title="x3">
-                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <variation key="heightClass=compact">
-                                            <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                        </variation>
-                                        <variation key="heightClass=regular-widthClass=regular">
-                                            <fontDescription key="fontDescription" type="system" pointSize="50"/>
-                                        </variation>
+                                        <variation key="heightClass=regular-widthClass=regular"/>
                                         <connections>
                                             <action selector="actionPushAdditionalOperation:" destination="zd5-s6-Glw" eventType="touchUpInside" id="DmR-HQ-6mA"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="26" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="23g-ec-ekZ">
                                         <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                        <color key="backgroundColor" white="0.95000000000000007" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="backgroundColor" red="0.90196078431372551" green="0.90196078431372551" blue="0.90196078431372551" alpha="1" colorSpace="calibratedRGB"/>
                                         <state key="normal" title="x!">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -2071,6 +2046,21 @@
                                             <action selector="actionPushEqual:" destination="zd5-s6-Glw" eventType="touchUpInside" id="hKN-lS-BFy"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" tag="23" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b4x-q6-oum">
+                                        <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                        <color key="backgroundColor" white="0.90000000000000002" alpha="1" colorSpace="calibratedWhite"/>
+                                        <state key="normal" image="kh2">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <variation key="heightClass=compact">
+                                            <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                        </variation>
+                                        <variation key="heightClass=regular-widthClass=regular"/>
+                                        <connections>
+                                            <action selector="actionPushAdditionalOperation:" destination="zd5-s6-Glw" eventType="touchUpInside" id="yYU-Te-bEL"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <constraints>
@@ -2333,7 +2323,6 @@
                                         <exclude reference="ixz-Va-iKh"/>
                                         <exclude reference="A17-rS-mmq"/>
                                         <exclude reference="JDI-KU-3Ul"/>
-                                        <exclude reference="b4x-q6-oum"/>
                                         <exclude reference="yH0-5V-GlT"/>
                                         <exclude reference="23g-ec-ekZ"/>
                                         <exclude reference="oem-Od-2PT"/>
@@ -2354,6 +2343,7 @@
                                         <exclude reference="5do-Jy-fpF"/>
                                         <exclude reference="9G2-kT-o6U"/>
                                         <exclude reference="sXS-eX-1j4"/>
+                                        <exclude reference="b4x-q6-oum"/>
                                     </mask>
                                     <mask key="constraints">
                                         <exclude reference="2Is-tP-WVf"/>
@@ -2612,7 +2602,6 @@
                                         <include reference="ixz-Va-iKh"/>
                                         <include reference="A17-rS-mmq"/>
                                         <include reference="JDI-KU-3Ul"/>
-                                        <include reference="b4x-q6-oum"/>
                                         <include reference="yH0-5V-GlT"/>
                                         <include reference="23g-ec-ekZ"/>
                                         <include reference="oem-Od-2PT"/>
@@ -2633,6 +2622,7 @@
                                         <include reference="5do-Jy-fpF"/>
                                         <include reference="9G2-kT-o6U"/>
                                         <include reference="sXS-eX-1j4"/>
+                                        <include reference="b4x-q6-oum"/>
                                     </mask>
                                     <mask key="constraints">
                                         <include reference="2Is-tP-WVf"/>
@@ -2773,7 +2763,6 @@
                                         <include reference="ixz-Va-iKh"/>
                                         <include reference="A17-rS-mmq"/>
                                         <include reference="JDI-KU-3Ul"/>
-                                        <include reference="b4x-q6-oum"/>
                                         <include reference="yH0-5V-GlT"/>
                                         <include reference="23g-ec-ekZ"/>
                                         <include reference="oem-Od-2PT"/>
@@ -2794,6 +2783,7 @@
                                         <include reference="5do-Jy-fpF"/>
                                         <include reference="9G2-kT-o6U"/>
                                         <include reference="sXS-eX-1j4"/>
+                                        <include reference="b4x-q6-oum"/>
                                     </mask>
                                     <mask key="constraints">
                                         <include reference="3xT-IY-0zO"/>
@@ -3022,4 +3012,11 @@
             <point key="canvasLocation" x="5682" y="390"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="10kh" width="130" height="124"/>
+        <image name="1_x" width="130" height="124"/>
+        <image name="eX" width="130" height="124"/>
+        <image name="kh2" width="130" height="124"/>
+        <image name="kh3" width="130" height="124"/>
+    </resources>
 </document>
