@@ -37,7 +37,7 @@ static bool isCount;
 
 #pragma mark - Simple operation
 
-- (void) inputNumber:(NSString*)number {
+- (void)inputNumber:(NSString*)number {
     
     [self removeExcessSymbol];
     
@@ -63,7 +63,7 @@ static bool isCount;
     [self.logicCalculatorDelegate clearButtonDidChange:@"C"];
 }
 
-- (void) simpleOperation:(NSInteger) operation {
+- (void)simpleOperation:(NSInteger) operation {
     
     if (operations && ![secondNumber isEqualToString:@""] && !isCount) {
         
@@ -76,7 +76,7 @@ static bool isCount;
     isPoint = NO;
 }
 
-- (void) countTwoNumbers {
+- (void)countTwoNumbers {
     
     switch (operations) {
             
@@ -118,7 +118,7 @@ static bool isCount;
     [self.logicCalculatorDelegate calculatorLogicDidChangeValue:firstNumber];
 }
 
-- (void) makePoint {
+- (void)makePoint {
     
     if (isPoint) {
         return;
@@ -152,17 +152,17 @@ static bool isCount;
     isPoint = YES;
 }
 
-- (void) percentageNumber {
+- (void)percentageNumber {
     
     [self printSimpleNumber:0.01];
 }
 
-- (void) plusMinusNumber {
+- (void)plusMinusNumber {
     
     [self printSimpleNumber:-1];
 }
 
-- (void) clearAll {
+- (void)clearAll {
     
     if (!operations || isCount) {
         
@@ -180,7 +180,7 @@ static bool isCount;
     [self.logicCalculatorDelegate clearButtonDidChange:@"AC"];
 }
 
-- (void) removeExcessSymbol {
+- (void)removeExcessSymbol {
     
     if (secondNumber == nil) {
         
@@ -204,27 +204,27 @@ static bool isCount;
     }
     else if ([secondNumber isEqualToString:@"00"]) {
         
-        firstNumber = [firstNumber substringToIndex:firstNumber.length-1];
-    }
-    else {
-        
         secondNumber = [secondNumber substringToIndex:secondNumber.length-1];
+    }
+    else if ([firstNumber isEqualToString:@"00"]){
+        
+        firstNumber = [firstNumber substringToIndex:firstNumber.length-1];
     }
 }
 
 #pragma mark - Additional operation
 
-- (void) piNumber {
+- (void)piNumber {
     
     [self printAdditionalNumber:M_PI];
 }
 
-- (void) eNumber {
+- (void)eNumber {
     
     [self printAdditionalNumber:M_E];
 }
 
-- (void) additionalOperation:(NSInteger)operation {
+- (void)additionalOperation:(NSInteger)operation {
     
     NSString* string;
     
@@ -264,7 +264,7 @@ static bool isCount;
             break;
             
         case OperationTypeOneShareToNumber:
-            string = [NSString stringWithFormat:@"%.15g",1 / string.doubleValue];
+            string = [NSString stringWithFormat:@"%.10g", 1.f / string.doubleValue];
             break;
             
         case OperationTypeEToPowerNumber:
@@ -286,31 +286,40 @@ static bool isCount;
 
 #pragma mark - Print number
 
-- (void) printSimpleNumber:(double) operationNumber {
+- (void)printSimpleNumber:(double) operationNumber {
 
     if (operations && !isCount) {
         
-        secondNumber = [NSString stringWithFormat:@"%.15g",secondNumber.doubleValue * operationNumber];
+        secondNumber = [NSString stringWithFormat:@"%.10g",secondNumber.doubleValue * operationNumber];
         [self.logicCalculatorDelegate calculatorLogicDidChangeValue:secondNumber];
     }
     else {
         
-        firstNumber = [NSString stringWithFormat:@"%.15g",firstNumber.doubleValue * operationNumber];
+        firstNumber = [NSString stringWithFormat:@"%.10g",firstNumber.doubleValue * operationNumber];
         [self.logicCalculatorDelegate calculatorLogicDidChangeValue:firstNumber];
     }
 }
 
-- (void) printAdditionalNumber:(double) number {
+- (void)printAdditionalNumber:(double) number {
 
     if (operations && !isCount) {
         
-        secondNumber = [NSString stringWithFormat:@"%.15g",number];
+        secondNumber = [NSString stringWithFormat:@"%.20g",number];
         [self.logicCalculatorDelegate calculatorLogicDidChangeValue:secondNumber];
     }
     else {
         
-        firstNumber = [NSString stringWithFormat:@"%.15g",number];
+        firstNumber = [NSString stringWithFormat:@"%.20g",number];
         [self.logicCalculatorDelegate calculatorLogicDidChangeValue:firstNumber];
+    }
+}
+
+- (void)printChangeOrientation:(BOOL)isPortrait {
+    
+    if (isPortrait) {
+        [self.logicCalculatorDelegate calculatorLogicDidChangeValue:[NSString stringWithFormat:@"%.10g", firstNumber.doubleValue]];
+    } else {
+        [self.logicCalculatorDelegate calculatorLogicDidChangeValue:[NSString stringWithFormat:@"%.20g", firstNumber.doubleValue]];
     }
 }
 

@@ -17,7 +17,7 @@
 
 @implementation CalculatorViewController
 
-static CGFloat mainScreen;
+static NSString* mainScreen;
 
 #pragma mark - Standard method
 
@@ -41,13 +41,11 @@ static CGFloat mainScreen;
     
     if (toInterfaceOrientation == UIInterfaceOrientationPortrait) {
         
-        mainScreen = self.mainScreenLable.text.doubleValue;
-        self.mainScreenLable.text = [NSString stringWithFormat:@"%.10g", self.mainScreenLable.text.doubleValue];
+        [self.logicCalculator printChangeOrientation:YES];
     }
-    else if (toInterfaceOrientation == UIInterfaceOrientationLandscapeLeft ||
-             toInterfaceOrientation == UIInterfaceOrientationLandscapeRight) {
+    else {
         
-        self.mainScreenLable.text = [NSString stringWithFormat:@"%.15g", mainScreen];
+        [self.logicCalculator printChangeOrientation:NO];
     }
 }
 
@@ -107,16 +105,27 @@ static CGFloat mainScreen;
 
 #pragma mark - LogicCalculatorProtocol
 
-- (void) calculatorLogicDidChangeValue:(NSString*)value {
+- (void)calculatorLogicDidChangeValue:(NSString*)value {
     
-    self.mainScreenLable.text = value;
+    if (UIDeviceOrientationIsPortrait([UIDevice currentDevice].orientation)) {
+        
+        self.mainScreenLable.text = [NSString stringWithFormat:@"%.10g",value.doubleValue];
+    }
+    else {
+        
+        self.mainScreenLable.text = [NSString stringWithFormat:@"%.15g",value.doubleValue];
+    }
 }
 
-- (void) clearButtonDidChange:(NSString*)value {
+- (void)clearButtonDidChange:(NSString*)value {
 
     [self.clearButtonVertical setTitle:value forState:UIControlStateNormal];
     [self.clearButtonHorizontal setTitle:value forState:UIControlStateNormal];
+}
 
+- (void)calculatorChangeOrientation:(NSString*)value {
+    
+    self.mainScreenLable.text = value;
 }
 
 @end

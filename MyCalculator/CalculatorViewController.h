@@ -30,6 +30,5 @@
 - (IBAction)actionPuchPI:(id)sender;
 - (IBAction)actionPushE:(id)sender;
 
-
 @end
 
