@@ -31,7 +31,7 @@ static bool isClearAll = YES;
 static bool isPoint;
 static bool isCount;
 
-#pragma mark - Simple operation
+#pragma mark - Simple operation -
 
 - (void)inputNumber:(NSString*)number {
     
@@ -92,6 +92,7 @@ static bool isCount;
             break;
             
         case OperationTypeShare:
+            
             if ([self.secondNumber isEqualToString:@"0"]) {
                 
                 self.firstNumber = @"∞";
@@ -117,6 +118,7 @@ static bool isCount;
     }
     
     if (self.operations) {
+        
         if ([self.secondNumber isEqualToString:@""]) {
             
             self.secondNumber = @"0.";
@@ -129,6 +131,7 @@ static bool isCount;
         [self.logicCalculatorDelegate calculatorLogicDidChangeValue:self.secondNumber];
     }
     else {
+        
         if ([self.firstNumber isEqualToString:@""]) {
            
             self.firstNumber = @"0.";
@@ -276,7 +279,12 @@ static bool isCount;
     }
 }
 
-#pragma mark - Print number
+- (float)factorial:(float)number1 {
+    
+    return tgammaf(++number1);
+}
+
+#pragma mark - Print -
 
 - (void)printSimpleNumber:(double) operationNumber {
 
@@ -316,13 +324,6 @@ static bool isCount;
         
         [self.logicCalculatorDelegate calculatorLogicDidChangeValue:[NSString stringWithFormat:@"%.20g", self.firstNumber.doubleValue]];
     }
-}
-
-#pragma mark - Factorial
-
-- (float)factorial:(float)number1 {
-    
-    return tgammaf(++number1);
 }
 
 @end

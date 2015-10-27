@@ -19,7 +19,7 @@
 
 static NSString* mainScreen;
 
-#pragma mark - Standard method
+#pragma mark - Standard method -
 
 - (void)viewDidLoad {
     
@@ -49,7 +49,7 @@ static NSString* mainScreen;
     }
 }
 
-#pragma mark - Action simple operation
+#pragma mark - Action simple operation -
 
 - (IBAction)actionPushNumber:(id)sender {
     
@@ -103,7 +103,7 @@ static NSString* mainScreen;
     [self.logicCalculator eNumber];
 }
 
-#pragma mark - LogicCalculatorProtocol
+#pragma mark - LogicCalculatorProtocol -
 
 - (void)calculatorLogicDidChangeValue:(NSString*)value {
     
@@ -121,11 +121,6 @@ static NSString* mainScreen;
 
     [self.clearButtonVertical setTitle:value forState:UIControlStateNormal];
     [self.clearButtonHorizontal setTitle:value forState:UIControlStateNormal];
-}
-
-- (void)calculatorChangeOrientation:(NSString*)value {
-    
-    self.mainScreenLable.text = value;
 }
 
 @end
