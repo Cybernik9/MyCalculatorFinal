@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>5FCDC05C-5C2C-479A-A3A3-68936352F988</string>
+	<key>IDESourceControlProjectName</key>
+	<string>MyCalculator</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>39AD04C220E547723AD69A2E0EA8F5C23970D569</key>
+		<string>https://github.com/Cybernik9/MyCalculatorFinal.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>MyCalculator.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>39AD04C220E547723AD69A2E0EA8F5C23970D569</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/Cybernik9/MyCalculatorFinal.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>39AD04C220E547723AD69A2E0EA8F5C23970D569</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>39AD04C220E547723AD69A2E0EA8F5C23970D569</string>
+			<key>IDESourceControlWCCName</key>
+			<string>MyCalculatorFinal</string>
+		</dict>
+	</array>
+</dict>
+</plist>
