@@ -309,8 +309,11 @@ static bool isCount;
 - (void)printChangeOrientation:(BOOL)isPortrait {
     
     if (isPortrait) {
+        
         [self.logicCalculatorDelegate calculatorLogicDidChangeValue:[NSString stringWithFormat:@"%.10g", self.firstNumber.doubleValue]];
-    } else {
+    }
+    else {
+        
         [self.logicCalculatorDelegate calculatorLogicDidChangeValue:[NSString stringWithFormat:@"%.20g", self.firstNumber.doubleValue]];
     }
 }
