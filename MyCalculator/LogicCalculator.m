@@ -235,15 +235,15 @@ static bool isCount;
     switch (operation) {
             
         case OperationTypeRootTwo:
-            string = [NSString stringWithFormat:@"%.15g",pow(string.doubleValue, 1./2)];
+            string = [NSString stringWithFormat:@"%.15g", pow(string.doubleValue, 1./2)];
             break;
             
         case OperationTypeRootThee:
-            string = [NSString stringWithFormat:@"%.15g",pow(string.doubleValue, 1./3)];
+            string = [NSString stringWithFormat:@"%.15g", pow(string.doubleValue, 1./3)];
             break;
             
         case OperationTypeNumberToPowerTwo:
-            string = [NSString stringWithFormat:@"%.15g",pow(string.doubleValue, 2)];
+            string = [NSString stringWithFormat:@"%.15g", pow(string.doubleValue, 2)];
             break;
             
         case OperationTypeNumberToPowerThree:
@@ -251,7 +251,7 @@ static bool isCount;
             break;
             
         case OperationTypeTenToPowerNumber:
-            string = [NSString stringWithFormat:@"%.15g",pow(10, string.doubleValue)];
+            string = [NSString stringWithFormat:@"%.15g",  pow(10, string.doubleValue)];
             break;
             
         case OperationTypeNumberFactorial:
@@ -259,11 +259,11 @@ static bool isCount;
             break;
             
         case OperationTypeOneShareToNumber:
-            string = [NSString stringWithFormat:@"%.10g", 1.f / string.doubleValue];
+            string = [NSString stringWithFormat:@"%.15g", 1.f / string.doubleValue];
             break;
             
         case OperationTypeEToPowerNumber:
-            string = [NSString stringWithFormat:@"%.15g",pow(M_E, string.doubleValue)];
+            string = [NSString stringWithFormat:@"%.15g", pow(M_E, string.doubleValue)];
             break;
     }
     

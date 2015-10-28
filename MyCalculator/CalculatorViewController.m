@@ -107,7 +107,15 @@ static NSString* mainScreen;
 
 - (void)calculatorLogicDidChangeValue:(NSString*)value {
     
-    if (UIDeviceOrientationIsPortrait([UIDevice currentDevice].orientation)) {
+    if ([value isEqualToString:@"inf"]) {
+        
+        self.mainScreenLable.text = value;
+    }
+    else if ([value isEqualToString:@"∞"]) {
+        
+        self.mainScreenLable.text = value;
+    }
+    else if (UIDeviceOrientationIsPortrait([UIDevice currentDevice].orientation)) {
         
         self.mainScreenLable.text = [NSString stringWithFormat:@"%.10g",value.doubleValue];
     }
